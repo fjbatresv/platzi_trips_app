@@ -38,6 +38,7 @@ flutter:
     - assets/img/paisaje3.jpg
     - assets/img/paisaje4.jpg
     - assets/img/paisaje5.jpg
+    - assets/img/traveler_couple.jpg
 
   fonts:
     - family: Lato

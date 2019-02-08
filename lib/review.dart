@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/stars.dart';
+import 'circle_photo.dart';
 
 class Review extends StatelessWidget{
 
@@ -71,25 +72,10 @@ class Review extends StatelessWidget{
       ],
     );
 
-    final photo = Container(
-      margin: EdgeInsets.only(
-          top: 20.0,
-          left: 15.0,
-      ),
-      width: 80.0,
-      height: 80.0,
-      decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(this.pathImage)
-          )
-      ),
-    );
 
     return Row(
       children: <Widget>[
-        photo,
+        CirclePhoto(this.pathImage),
         userDetails
       ],
     );

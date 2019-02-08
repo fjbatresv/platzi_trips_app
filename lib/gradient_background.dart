@@ -4,13 +4,15 @@ class GradientBackground extends StatelessWidget{
 
   String title = "Popular";
 
-  GradientBackground(this.title);
+  double height = 250.0;
+
+  GradientBackground(this.title, this.height);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      height: 250.0,
+      height: this.height,
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [
@@ -32,7 +34,7 @@ class GradientBackground extends StatelessWidget{
             fontWeight: FontWeight.bold,
           ),
       ),
-      alignment: Alignment(-0.9, -0.6),
+      alignment: Alignment(-0.9, this.height == 400 ? -0.8 : -0.6),
     );
   }
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/description_place.dart';
-import 'package:platzi_trips_app/review_list.dart';
-import 'header_appbar.dart';
+import 'platzi_trips.dart';
+import 'platzi_trips_cupertino.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,25 +21,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.indigo,
       ),
-      home: Scaffold(
-
-        body: Stack(
-          children: <Widget>[
-            ListView(
-              children: <Widget>[
-                DescriptionPlace(
-                    "Duwili Ella",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id justo lacinia, convallis ipsum sed, tempus leo. Praesent ante elit, lobortis sed faucibus vitae, vulputate a diam.",
-                    2),
-                ReviewList(4)
-              ],
-            ),
-            HeaderAppBar()
-          ],
-        )
-      )
+      home: PlatziTripsCupertino()
     );
   }
 }
