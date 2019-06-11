@@ -9,6 +9,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
+  # BLoC Arq
+  generic_bloc_provider: ^1.0.9
+  # Firebase
+  firebase_core: ^0.4.0+3
+  firebase_auth:
+  google_sign_in:
+  cloud_firestore: ^0.12.5
+  firebase_storage: ^3.0.1
 
 dev_dependencies:
   flutter_test:
