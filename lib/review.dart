@@ -1,84 +1,108 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/stars.dart';
-import 'circle_photo.dart';
 
-class Review extends StatelessWidget{
+class Review extends StatelessWidget {
 
-  String pathImage = "assets/img/traveler.jpg";
-  String userName = "Varuna Yasas";
-  String details = "1 review - 5 photos";
+  String pathImage = "assets/img/people.jpg";
+  String name = "Varuna Yasas";
+  String details = "1 review · 5 photos";
   String comment = "There is an amazing place in Sri Lanka";
 
-  Review(this.pathImage, this.userName, this.details, this.comment);
+  Review(this.pathImage, this.name, this.details, this.comment);
 
   @override
   Widget build(BuildContext context) {
-
-    final userName = Container(
-      margin: EdgeInsets.only(
-        left: 20.0
-      ),
-      child: Text(
-          this.userName,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontSize: 17.0,
-            fontFamily: "Lato"
-          ),
-      ),
-    );
-
-    final userInfo = Container(
-      margin: EdgeInsets.only(
-          left: 20.0
-      ),
-      child: Text(
-        this.details,
-        textAlign: TextAlign.left,
-        style: TextStyle(
-            fontSize: 13.0,
-            fontFamily: "Lato",
-            color: Color(0xFFa3a5a7)
-        ),
-      ),
-    );
+    // TODO: implement build
 
     final userComment = Container(
       margin: EdgeInsets.only(
           left: 20.0
       ),
+
       child: Text(
-        this.comment,
+        comment,
         textAlign: TextAlign.left,
         style: TextStyle(
-            fontSize: 13.0,
             fontFamily: "Lato",
+            fontSize: 13.0,
             fontWeight: FontWeight.w900
         ),
+
       ),
+
+    );
+
+    final userInfo = Container(
+      margin: EdgeInsets.only(
+        left: 20.0
+    ),
+
+      child: Text(
+        details,
+        textAlign: TextAlign.left,
+        style: TextStyle(
+            fontFamily: "Lato",
+            fontSize: 13.0,
+          color: Color(0xFFa3a5a7)
+        ),
+
+      ),
+
+    );
+
+    final userName = Container(
+      margin: EdgeInsets.only(
+        left: 20.0
+      ),
+
+      child: Text(
+        name,
+        textAlign: TextAlign.left,
+        style: TextStyle(
+          fontFamily: "Lato",
+            fontSize: 17.0
+        ),
+
+      ),
+
     );
 
     final userDetails = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         userName,
-        Row(
-          children: <Widget>[
-            userInfo,
-            Star(3)
-          ],
-        ),
+        userInfo,
         userComment
+
       ],
     );
 
+    final photo = Container (
+      margin: EdgeInsets.only(
+        top: 20.0,
+        left: 20.0
+      ),
 
-    return Row(
+      width: 80.0,
+      height: 80.0,
+
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage(pathImage)
+        )
+      ),
+
+    );
+
+    return Row (
       children: <Widget>[
-        CirclePhoto(this.pathImage),
+        photo,
         userDetails
+
       ],
     );
+
   }
 
 }

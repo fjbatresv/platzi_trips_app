@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'description_place.dart';
-import 'review_list.dart';
-import 'header_appbar.dart';
+import 'package:platzi_trips_app/description_place.dart';
+import 'package:platzi_trips_app/header_appbar.dart';
+import 'package:platzi_trips_app/review_list.dart';
 
-class HomeTrips extends StatelessWidget{
+class HomeTrips extends StatelessWidget {
+  String descriptionDummy = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -11,11 +12,9 @@ class HomeTrips extends StatelessWidget{
       children: <Widget>[
         ListView(
           children: <Widget>[
-            DescriptionPlace(
-                "Duwili Ella",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id justo lacinia, convallis ipsum sed, tempus leo. Praesent ante elit, lobortis sed faucibus vitae, vulputate a diam.",
-                2),
-            ReviewList(4)
+            DescriptionPlace("Bahamas", 4, descriptionDummy),
+            ReviewList()
+
           ],
         ),
         HeaderAppBar()

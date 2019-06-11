@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/review.dart';
+import 'review.dart';
 
-class ReviewList extends StatelessWidget{
-
-  int reviewsCount;
-
-  ReviewList(this.reviewsCount);
-
+class ReviewList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    List<Widget> generateReviews(){
-      List<Widget> reviews = [];
-      for(int i = 0; i < reviewsCount; i++){
-        reviews.add(Review("assets/img/traveler.jpg", "Juan Lopez", "1 review | 5 photos", "Test comment"));
-      }
-      return reviews;
-    }
-
+    // TODO: implement build
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: generateReviews(),
+      children: <Widget>[
+        Review("assets/img/people.jpg", "Varuna Yasas", "1 review · 5 photos", "There is an amazing place in Sri Lanka"),
+        Review("assets/img/ann.jpg", "Anahí Salgado", "2 review · 5 photos", "There is an amazing place in Sri Lanka"),
+        Review("assets/img/girl.jpg", "Gissele Thomas", "2 review · 2 photos", "There is an amazing place in Sri Lanka"),
+
+      ],
     );
   }
 
