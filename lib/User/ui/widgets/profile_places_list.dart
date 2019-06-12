@@ -5,8 +5,8 @@ import 'profile_place.dart';
 
 class ProfilePlacesList extends StatelessWidget {
 
-  Place place = new Place('Knuckles Mountains Range', 'Hiking. Water fall hunting. Natural bath', 'Scenery & Photography', '123,123,123');
-  Place place2 = new Place('Mountains', 'Hiking. Water fall hunting. Natural bath', 'Scenery & Photography', '321,321,321');
+  Place place = new Place(name: 'Knuckles Mountains Range', description: 'Hiking. Watter fall hunting. Natural bath', uriImage: 'https://images.pexels.com/photos/2150347/pexels-photo-2150347.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', likes: 3);
+  Place place2 = new Place(name: 'Mountains', description: 'Hiking. Water fall hunting. Natural Bath.', likes: 10, uriImage: 'https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class ProfilePlacesList extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
-          ProfilePlace('assets/img/river.jpeg', place),
-          ProfilePlace('assets/img/mountain.jpeg', place2),
+          ProfilePlace(place),
+          ProfilePlace(place2),
         ],
       ),
     );
