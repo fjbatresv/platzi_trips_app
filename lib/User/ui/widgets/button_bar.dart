@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:platzi_trips_app/Place/ui/screens/add_place_screen.dart';
 import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
 import 'circle_button.dart';
 
 class ButtonsBar extends StatelessWidget {
-  
   UserBloc _bloc;
 
   @override
@@ -24,16 +24,20 @@ class ButtonsBar extends StatelessWidget {
                 mini: false,
                 icon: Icons.add,
                 iconSize: 40,
-                color:
-                    Color.fromRGBO(255, 255, 255, 1)), //TODO: Crear nuevo lugar
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AddPlaceScreen(image: null))),
+                color: Color.fromRGBO(255, 255, 255, 1)),
             CircleButton(
-                mini: true,
-                icon: Icons.exit_to_app,
-                iconSize: 20,
-                color: Color.fromRGBO(255, 255, 255, 0.6),
-                onTap: (){
-                  _bloc.signOut();
-                },),
+              mini: true,
+              icon: Icons.exit_to_app,
+              iconSize: 20,
+              color: Color.fromRGBO(255, 255, 255, 0.6),
+              onTap: () {
+                _bloc.signOut();
+              },
+            ),
           ],
         ));
   }
