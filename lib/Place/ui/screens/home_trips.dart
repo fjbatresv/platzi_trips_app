@@ -13,8 +13,6 @@ class HomeTrips extends StatelessWidget {
         ListView(
           children: <Widget>[
             DescriptionPlace("Bahamas", 4, descriptionDummy),
-            ReviewList()
-
           ],
         ),
         HeaderAppBar()

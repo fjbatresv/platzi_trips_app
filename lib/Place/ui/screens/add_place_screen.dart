@@ -69,8 +69,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                 Container(
                   alignment: Alignment.center,
                   child: CardImageWithFabIcon(
-                    pathImage:
-                        "assets/img/beach_palm.jpeg", //widget.image.path,
+                    pathImage: widget.image.path,
                     icon: Icons.camera_alt,
                     width: 350,
                     height: 250,
@@ -103,13 +102,22 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                 Container(
                   child: ButtonPurple(
                     buttonText: "Add Place",
-                    onTap: () {
-                      //TODO: Firebase Storage image upload
-                      _bloc.updatePlaceData(Place(
-                        name: _controllerTitlePlace.text,
-                        description: _controllerDescriptionPlace.text,
-                        likes: 0
-                      )).whenComplete((){
+                    onTap: () async {
+                      final user = await _bloc.currentUser;
+                      if (user == null) return null;
+                      final uploadTask = await _bloc.uploadFile(
+                          'places/${user.uid}/${DateTime.now().toIso8601String()}',
+                          widget.image);
+                      final uploadResult = await uploadTask.onComplete;
+                      final downloadUrl =
+                          await uploadResult.ref.getDownloadURL();
+                      _bloc
+                          .updatePlaceData(Place(
+                              name: _controllerTitlePlace.text,
+                              description: _controllerDescriptionPlace.text,
+                              uriImage: downloadUrl,
+                              likes: 0), )
+                          .whenComplete(() {
                         print('Cargado!');
                         Navigator.pop(context);
                       });

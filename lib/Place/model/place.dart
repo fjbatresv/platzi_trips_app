@@ -8,14 +8,17 @@ class Place {
   String uriImage;
   int likes;
   User userOwner;
+  bool liked;
 
   Place({
     Key key,
     @required this.name,
     @required this.description,
     @required this.uriImage,
-    @required this.userOwner,
+    //@required this.userOwner,
     this.likes,
+    this.id,
+    this.liked = false
   });
 
 }
