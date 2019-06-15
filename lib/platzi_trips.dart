@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'home_trips.dart';
-import 'search_trips.dart';
-import 'profile_trips.dart';
+import 'package:platzi_trips_app/Place/ui/screens/home_trips.dart';
+import 'package:platzi_trips_app/Place/ui/screens/search_trips.dart';
+import 'package:platzi_trips_app/User/ui/screens/profile_trips.dart';
 
-class PlatziTrips extends StatefulWidget{
+class PlatziTrips extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -12,46 +12,53 @@ class PlatziTrips extends StatefulWidget{
 
 }
 
-class _PlatziTrips extends State<PlatziTrips>{
+class _PlatziTrips extends State<PlatziTrips> {
+  int indexTap = 0;
+  final List<Widget> widgetsChildren = [
+    HomeTrips(),
+    SearchTrips(),
+    ProfileTrips()
+  ];
 
   void onTapTapped(int index){
+
     setState(() {
-      navIndex = index;
+      indexTap = index;
     });
+
   }
-
-  int navIndex = 0;
-
-  final List<Widget> content = [HomeTrips(), SearchTrips(), ProfileTrips()];
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      body: content[navIndex],
+
+
+    return
+
+      Scaffold(
+      body: widgetsChildren[indexTap],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-          canvasColor: Colors.white, //Color del fondo
-          primaryColor: Colors.purple //Color de los iconos
+          canvasColor: Colors.white,
+          primaryColor: Colors.purple
         ),
         child: BottomNavigationBar(
-          currentIndex: navIndex,
-
           onTap: onTapTapped,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text("Home")
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                title: Text("Search")
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                title: Text("Profile")
-            )
-          ],
+          currentIndex: indexTap,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                title: Text("")
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  title: Text("")
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  title: Text("")
+              ),
+            ]
         ),
       ),
     );

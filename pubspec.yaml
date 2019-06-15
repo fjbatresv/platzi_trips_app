@@ -1,12 +1,5 @@
 name: platzi_trips_app
-description: Project made on the course of flutter from platzi.
-author: Javier Batres <me@fjbatresv.com>
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# Read more about versioning at semver.org.
+description: A new Flutter application.
 version: 1.0.0+1
 
 environment:
@@ -15,30 +8,36 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  # BLoC Arq
+  generic_bloc_provider: ^1.0.9
+  # Firebase
+  firebase_core: ^0.4.0+3
+  firebase_auth:
+  google_sign_in:
+  cloud_firestore: ^0.12.5
+  firebase_storage: ^3.0.1
+  #Camara
+  image_picker: ^0.6.0+9
+  #Performance - Cache
+  cached_network_image: ^0.8.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
   assets:
-    - assets/img/traveler.jpg
-    - assets/img/paisaje1.jpg
-    - assets/img/paisaje2.jpg
-    - assets/img/paisaje3.jpg
-    - assets/img/paisaje4.jpg
-    - assets/img/paisaje5.jpg
-    - assets/img/traveler_couple.jpg
+    - assets/img/people.jpg
+    - assets/img/ann.jpg
+    - assets/img/girl.jpg
+    - assets/img/mountain.jpeg
+    - assets/img/beach.jpeg
+    - assets/img/beach_palm.jpeg
+    - assets/img/mountain_stars.jpeg
+    - assets/img/sunset.jpeg
+    - assets/img/river.jpeg
 
   fonts:
     - family: Lato
